@@ -20,7 +20,7 @@ object DatasetVsDataFrame {
     import sparkSession.implicits._
 
 
-    //read data from text file
+    //read data from text file and infer schema is mandatory
 
     val df = sparkSession.read.option("header","true").option("inferSchema","true").csv("src/main/resources/sales.csv")
     val ds = sparkSession.read.option("header","true").option("inferSchema","true").csv("src/main/resources/sales.csv").as[Sales]
